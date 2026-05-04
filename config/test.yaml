@@ -1,0 +1,17 @@
+# Notification Service - Test Configuration
+# Loaded automatically by the 'config' npm package when NODE_ENV=test
+
+kafka:
+  broker:
+    - "localhost:9092"
+
+mail:
+  host: "smtp.ethereal.email"
+  port: 587
+  auth:
+    user: "test-user"
+    pass: "test-pass"
+  from: "noreply@pizza-restaurant.com"
+
+frontend:
+  clientUI: "http://localhost:5173"

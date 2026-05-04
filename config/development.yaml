@@ -1,0 +1,17 @@
+# Notification Service - Development Configuration
+# Loaded automatically by the 'config' npm package when NODE_ENV=development
+
+kafka:
+  broker:
+    - "localhost:9092"
+
+mail:
+  host: "smtp.ethereal.email"
+  port: 587
+  auth:
+    user: ""
+    pass: ""
+  from: "noreply@pizza-restaurant.com"
+
+frontend:
+  clientUI: "http://localhost:5173"

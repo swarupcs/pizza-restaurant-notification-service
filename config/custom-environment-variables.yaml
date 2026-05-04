@@ -1,0 +1,21 @@
+# Notification Service - Environment Variable Mappings
+# Maps config keys to environment variable names for runtime overrides.
+
+kafka:
+  broker:
+    __name: "KAFKA_BROKER"
+    __format: "json"
+  sasl:
+    username: "KAFKA_SASL_USERNAME"
+    password: "KAFKA_SASL_PASSWORD"
+
+mail:
+  host: "MAIL_HOST"
+  port: "MAIL_PORT"
+  auth:
+    user: "MAIL_USER"
+    pass: "MAIL_PASS"
+  from: "MAIL_FROM"
+
+frontend:
+  clientUI: "CLIENT_UI_DOMAIN"
