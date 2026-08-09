@@ -4,6 +4,15 @@
 kafka:
   broker:
     - "localhost:9092"
+  # Only read on the production branch of src/config/kafka.ts, but node-config
+  # throws on get() of an undefined key — so these have to exist for
+  # tests/config/kafka.spec.ts to exercise that branch at all.
+  #
+  # Note there is deliberately no `ssl` key here: unlike order-service, this
+  # service hardcodes `ssl: true` and never reads it from config.
+  sasl:
+    username: "test-user-kafka"
+    password: "test-password-kafka"
 
 mail:
   host: "smtp.ethereal.email"

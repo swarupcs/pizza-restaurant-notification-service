@@ -18,4 +18,19 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  {
+    files: ["tests/**/*.ts"],
+    languageOptions: {
+      globals: { ...globals.node, ...globals.jest },
+    },
+    rules: {
+      // `jest.mock("mod", () => require("./mock"))` is deliberate: jest.mock is
+      // hoisted above const declarations, so a factory closing over a
+      // top-level import would hit a temporal-dead-zone error.
+      "@typescript-eslint/no-require-imports": "off",
+      // The fixtures cast freely to stand in for Kafka payloads, which the
+      // handlers accept as untyped `order` arguments anyway.
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
 ];
